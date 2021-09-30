@@ -88,7 +88,7 @@ let toThirdDegree2 = (a) => {
 
 // Analog 2
 
-let res3 = arr.map(elem => elem ** 3)
+let res3 = arr.map(elem => elem ** 3);
 
 // Створити функцію, яка приймає один масив чисел у якості аргументу та 
 // повертає новий масив, який складається з непарних елементів вхідного масиву;
@@ -105,7 +105,7 @@ let makeOdd = (a) => {
 
 // Analog 
 
-let oddArray2 = arr.filter(elem => elem % 2 )
+let oddArray2 = arr.filter(elem => elem % 2 );
 
 
 // Створити функцію, яка приймає один масив чисел у якості аргументу та 
@@ -121,9 +121,9 @@ let isInt = (a) => {
 
 // Analog
 
-let iArr2 = arr.filter(elem => Number.isInteger(elem))
+let iArr2 = arr.filter(elem => Number.isInteger(elem));
 
 
 // Створити функцію, яка нічого не повертає;
 
-let doNothing = () => {}
+let doNothing = () => {};
