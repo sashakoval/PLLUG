@@ -2,7 +2,6 @@
 
 // Створити функцію яка б отримувала параметром масив з елементів різних типів (строки, масиви, числа, об’єкти і т.д), 
 // на виході має повернути строку у camel case (приклад строки у camel case: thisIsExampleOfTheCamelCase), яка б поєднувала в собі всі елементи масиву які є строками.
-let arr = []
 let toCamelCase = (arr) => {
     let resultArr = arr.filter(elem => { return typeof elem === 'string' ? elem : false})
     .map((elem) => { return elem.charAt(0).toUpperCase() + elem.slice(1).toLowerCase() })
