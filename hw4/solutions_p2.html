@@ -1,0 +1,86 @@
+#Скрипт який виводить в консоль дату і час коли DOM побудований, але css, зображення ще не завантажились.
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0');
+        let yyyy = today.getFullYear();
+
+        today = mm + '/' + dd + '/' + yyyy;
+        console.log(today);
+        });
+    </script>
+
+#Скрипт який виводить в консоль дату і час коли DOM побудований, але css, зображення завантажились.
+    <script>
+        window.onload = function () {
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0');
+        let yyyy = today.getFullYear();
+
+        today = mm + '/' + dd + '/' + yyyy;
+        console.log(today);
+        };
+    </script>
+#Скрипт який виводить в консоль дату і час коли юзер натиснув на закрити вкладку або перезавантажити сторінку.
+
+<script>
+    window.onbeforeunload = function () {
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0');
+    let yyyy = today.getFullYear();
+
+    today = mm + '/' + dd + '/' + yyyy;
+    console.log(today);
+    return false;
+    };
+</script>
+
+#Скрипт який виводить повертає назву браузера та назву операційної системи через дефіс "-" як одну строку.
+
+<script>
+    console.log(navigator.appCodeName + "-" + navigator.platform);
+</script>
+
+#Скрипт який змушує браузер показувати сповіщення, коли ви намагаєтесь перезавантажити сторінку, видалити вкладку, чи вимкнути браузер.
+
+<script>
+    window.onbeforeunload=function(){
+    return "Are you sure to leave this page?";
+    }
+</script>
+
+#Скрипт який виводить в консоль скільки секунд юзер перебував на сторінці, після того як юзер натиснув на закрити вкладку або перезавантажити сторінку.
+
+
+
+<script>
+    let loadTimeObj = {};
+    window.onload = function () {
+        let loadTime = new Date();
+
+        loadTimeObj.Hours = loadTime.getHours();
+        loadTimeObj.Minutes = loadTime.getMinutes();
+        loadTimeObj.Seconds = loadTime.getSeconds();
+        
+        return loadTimeObj;
+    }
+    window.onbeforeunload=function(){
+        let unloadTime = new Date();
+        let unloadTimeObj = {};
+        let resultObj = {};
+
+        unloadTimeObj.Hours = unloadTime.getHours();
+        unloadTimeObj.Minutes = unloadTime.getMinutes();
+        unloadTimeObj.Seconds = unloadTime.getSeconds();
+        
+        resultObj.Hours = unloadTimeObj.Hours - loadTimeObj.Hours;
+        resultObj.Minutes = unloadTimeObj.Minutes - loadTimeObj.Minutes;
+        resultObj.Seconds = unloadTimeObj.Seconds - loadTimeObj.Seconds;
+        
+        console.log(resultObj);
+        return false;
+    }
+</script>
