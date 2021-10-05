@@ -19,7 +19,7 @@ let numToNumber = (arr) => {
 
 // Створити функцію яка параметром отримує об’єкт (наприклад {a: 22, b: -11.35, c: 41.2, d: ‘hello’}) і повертає новий об’єкт у який містить тільки числа більші рівні 0.
 
-let sortObject (obj) => {
+let sortObject = (obj) => {
     let resultObj = Object.fromEntries(
         Object.entries(obj).filter(([key, val]) => { return val >= 0 ? [key, val] : false})
     );
