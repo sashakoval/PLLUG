@@ -1,4 +1,4 @@
-#Скрипт який виводить в консоль дату і час коли DOM побудований, але css, зображення ще не завантажились.
+<!-- Скрипт який виводить в консоль дату і час коли DOM побудований, але css, зображення ще не завантажились. -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
         let today = new Date();
@@ -11,7 +11,7 @@
         });
     </script>
 
-#Скрипт який виводить в консоль дату і час коли DOM побудований, але css, зображення завантажились.
+<!-- Скрипт який виводить в консоль дату і час коли DOM побудований, але css, зображення завантажились. -->
     <script>
         window.onload = function () {
         let today = new Date();
@@ -23,7 +23,7 @@
         console.log(today);
         };
     </script>
-#Скрипт який виводить в консоль дату і час коли юзер натиснув на закрити вкладку або перезавантажити сторінку.
+<!-- Скрипт який виводить в консоль дату і час коли юзер натиснув на закрити вкладку або перезавантажити сторінку. -->
 
 <script>
     window.onbeforeunload = function () {
@@ -38,13 +38,13 @@
     };
 </script>
 
-#Скрипт який виводить повертає назву браузера та назву операційної системи через дефіс "-" як одну строку.
+<!-- Скрипт який виводить повертає назву браузера та назву операційної системи через дефіс "-" як одну строку. -->
 
 <script>
     console.log(navigator.appCodeName + "-" + navigator.platform);
 </script>
 
-#Скрипт який змушує браузер показувати сповіщення, коли ви намагаєтесь перезавантажити сторінку, видалити вкладку, чи вимкнути браузер.
+<!-- Скрипт який змушує браузер показувати сповіщення, коли ви намагаєтесь перезавантажити сторінку, видалити вкладку, чи вимкнути браузер. -->
 
 <script>
     window.onbeforeunload=function(){
@@ -52,14 +52,12 @@
     }
 </script>
 
-#Скрипт який виводить в консоль скільки секунд юзер перебував на сторінці, після того як юзер натиснув на закрити вкладку або перезавантажити сторінку.
-
-
+<!-- Скрипт який виводить в консоль скільки секунд юзер перебував на сторінці, після того як юзер натиснув на закрити вкладку або перезавантажити сторінку. -->
 
 <script>
-    let loadTimeObj = {};
+    const loadTimeObj = {};
     window.onload = function () {
-        let loadTime = new Date();
+        const loadTime = new Date();
 
         loadTimeObj.Hours = loadTime.getHours();
         loadTimeObj.Minutes = loadTime.getMinutes();
@@ -68,9 +66,9 @@
         return loadTimeObj;
     }
     window.onbeforeunload=function(){
-        let unloadTime = new Date();
+        const unloadTime = new Date();
         let unloadTimeObj = {};
-        let resultObj = {};
+        const resultObj = {};
 
         unloadTimeObj.Hours = unloadTime.getHours();
         unloadTimeObj.Minutes = unloadTime.getMinutes();
