@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>Homework</title>
+ </head>
+ <body>
+   <div class="container">
+     <ul id="animals">
+       <li class="pet">Dog</li>
+       <li id="cat" class="pet">Cat</li>
+       <li class="wild">Elephant</li>
+       <li class="wild">Whale</li>
+       <li class="wild">Horse</li>
+       <li class="wild dangerous">Tiger</li>
+     </ul>
+     <ul id="birds">
+       <li class="wild">Eagle</li>
+       <li class="wild">Sparrow</li>
+       <li class="pet wild">Parrot</li>
+     </ul>
+   </div>
+   <script>
+        //part 1
+        // Функція яка збільшує розмір шрифту всіх елементів списку animals
+        
+       const increaseFont = () => {
+            document.querySelector('#animals').style.fontSize = "20px";
+       }
+
+       // Функція яка видаляє всі класи останнього елемента списку animals
+       
+       const removeClasses = () => {
+            document.querySelector('#animals').lastElementChild.className = "";
+       }
+
+       // Функція яка змінює background-color наступного елемента після елемента з id="cat"
+
+       const setBackground = () => {
+            document.querySelector('#cat').nextElementSibling.style.backgroundColor = "red";
+       }
+
+       // Функція яка змінює колір тексту на червоний всім елементам які мають клас dangerous
+       
+       const setColor = () => {
+            document.querySelector('.dangerous').style.backgroundColor = "red";
+       }
+
+       // Функція яка видаляє всі елементи які мають клас pet, але якщо крім класу pet є ще інші класи, то вони повинні залишитись
+       
+       const deleteElements = () => {
+            document.querySelectorAll('.pet').forEach(node => {
+                if (node.className === "pet") {
+                    node.remove();
+                }
+            });
+        }
+
+        // Функція яка додає додає новий елемент в список birds - після цього це має бути список у якому новий елемент є першим
+
+        const addElemBefore = () => {
+            let newElemBefore = document.createElement("li");
+            newElemBefore.textContent = "Crow";
+            newElemBefore.className = "wild";
+            const firstElement = document.querySelector('#birds').firstElementChild;
+            document.querySelector("#birds").insertBefore(newElemBefore, firstElement);
+        }
+
+        // part 2
+        // Функція яка додає додає новий елемент в список birds - після цього це має бути список у якому новий елемент є останнім
+
+        const addElementAfter = () => {
+            let newElemAfter = document.createElement("li");
+            newElemAfter.textContent = "Woodpecker";
+            newElemAfter.className = "wild";
+            document.querySelector("#birds").appendChild(newElemAfter);
+        }
+
+        // Функція яка додає додає новий список id="fish" перед списком birds
+
+        const addListBefore = () => {
+            let newListBefore = document.createElement('ul');
+            newListBefore.id = "fish";
+            const lastList = document.querySelector(".container").lastElementChild;
+            document.querySelector(".container").insertBefore(newListBefore, lastList);
+        }
+    
+        // Функція яка змінює порядок елементів в списку animals - останній елемент стає першим, передостанній  - другим, і т.д.
+
+        const reverseElements = () => {
+           Array.prototype.slice.call(document.querySelectorAll('#animals li'))
+           .forEach((elem) => {
+                elem.parentNode.insertBefore(elem, elem.parentNode.firstChild)
+           });
+        }
+   </script>
+ </body>
+</html>
