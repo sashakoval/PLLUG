@@ -87,11 +87,25 @@
         // Функція яка змінює порядок елементів в списку animals - останній елемент стає першим, передостанній  - другим, і т.д.
 
         const reverseElements = () => {
-           Array.prototype.slice.call(document.querySelectorAll('#animals li'))
+           [...document.querySelectorAll('#animals li')]
            .forEach((elem) => {
                 elem.parentNode.insertBefore(elem, elem.parentNode.firstChild)
            });
         }
+
+        // Функція яка перетворює класи елементів списку animals і додає до цих елементів data-* атрибути з назвою класу який був 
+        // прибраний. Наприклад: <li class="wild dangerous">Tiger</li> => <li data-wild data-dangerous>Tiger</li>
+        
+        const toDataAttribute = () => {
+          const animals = document.querySelector("#animals").children;
+
+               for (let elem of animals) {
+                    elem.classList.forEach((classElem) => {
+                         elem.dataset[classElem] = classElem; 
+               });
+               elem.classList = "";
+               }    
+          }        
    </script>
  </body>
 </html>
